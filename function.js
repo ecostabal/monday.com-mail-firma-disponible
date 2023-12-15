@@ -28,10 +28,10 @@ function readEmailTemplate() {
 }
 
 // Función para enviar un correo electrónico personalizado
-async function sendCustomEmail(to, subject, firstname, address) {
+async function sendCustomEmail(to, subject, firstname, address, email) {
     try {
         let emailHtml = readEmailTemplate();
-        emailHtml = emailHtml.replace('[Nombre]', firstname).replace('[Dirección]', address);
+        emailHtml = emailHtml.replace('[Nombre]', firstname).replace('[Dirección]', address).replace('[Correo]', email);
 
         const mailOptions = {
             from: '"Urbex Central" <central@urbex.cl>',
@@ -109,7 +109,7 @@ async function getMondayItemData(itemId) {
         const fullName = `${firstname} ${lastName}`;
   
         // Send email
-        await sendCustomEmail(email, `🖊️ Hola ${firstname}, ¡Tu contrato está disponible para firmar!`, firstname, address);
+        await sendCustomEmail(email, `🖊️ Hola ${firstname}, ¡Tu contrato está disponible para firmar!`, firstname, address, email);
       }
   
       console.log('Procesamiento completado para el elemento:', itemId);
