@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>¡Tu contrato está disponible para firma!</title>
+    <title>Urbex Correo</title>
     <style>
         body {
             font-family: Lato, sans-serif;
@@ -11,11 +11,12 @@
         }
 
         h1 {
-            font-size: 2em;
+            font-size: 2.5em;
+            line-height: 1.6em;
             margin-bottom: 2em;
             text-align: center; /* Centrar título */
-            padding: 0 5%; /* Ajustado para móviles */
-            line-height: 1.6em;
+            padding-left: 40px;
+            padding-right: 40px;            
         }
 
         p {
@@ -54,7 +55,7 @@
 
         .button {
             display: inline-block;
-            padding: 10px 40px;
+            padding: 20px 50px; /* Aumenta el padding para un botón más grande */
             background-color: #313131;
             color: white;
             text-decoration: none;
@@ -62,6 +63,7 @@
             font-weight: bold;
             margin-top: 2em;
             margin-bottom: 2em;
+            font-size: 1.2em; /* Aumenta el tamaño de la fuente para un texto más grande en el botón */
         }
 
         img {
@@ -73,17 +75,34 @@
         }
 
         @media screen and (max-width: 768px) {
-            .container, .content, .footer {
-                padding: 0;
+            .content, .footer {
+                padding: 0%;
             }
 
-            h1, p {
+            .container {
+                padding: 5%;               
+            }
+
+            h1 {
+                font-size: 2em;
+                line-height: 1.6em;
                 padding-left: 20px;
                 padding-right: 20px;
             }
 
+            p {
+                font-size: 1.2em;
+                padding-left: 20px;
+                padding-right: 20px;
+            }                
+
+            .button-container {
+                text-align: center; /* Centrar contenedor del botón */
+                margin-top: 40px;
+            }
+
             .button {
-                padding: 10px 20px;
+                padding: 20px 50px; /* Aumenta el padding para un botón más grande */
             }
         }
     </style>
