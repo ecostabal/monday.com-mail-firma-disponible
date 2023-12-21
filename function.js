@@ -76,14 +76,23 @@ async function getMondayItemData(itemId) {
       }
     });
   
-    return response.data?.data?.items[0];
+    const itemData = response.data?.data?.items[0];
+
+    // Verificar el tipo de contrato
+    const contractType = itemData.column_values.find(cv => cv.id === 'estado_1')?.text;
+    if (contractType !== 'Arriendo') {
+        console.log('El tipo de contrato no es Arriendo. Función no ejecutada.');
+        return null;
+    }
+
+    return itemData;
   }
   
   // Function to process subitems and create new items
   async function processSubElementsAndSendMessages(itemId) {
     try {
       const itemData = await getMondayItemData(itemId);
-  
+
       if (!itemData) {
         console.error('No se encontraron datos para el item ID:', itemId);
         return;
